@@ -192,7 +192,7 @@ public class ConfigDefault
                 .defineInRange("animal_hurt_ratio", -.5, -100.0, 100.0);
         m_petDeath = builder
                 .comment("Players gain this amount of sanity upon their pets' death")
-                .defineInRange("pet_death", -60.0, -100.0, 100.0);
+                .defineInRange("pet_death", 0.0, -100.0, 100.0);
         m_villagerTrade = builder
                 .comment("Players gain this amount of sanity upon successfully trading with a villager")
                 .defineInRange("villager_trade", 20.0, -100.0, 100.0);
@@ -219,7 +219,7 @@ public class ConfigDefault
                 .defineInRange("fishing_cd", 0.0, 0.0, Float.MAX_VALUE);
         m_farmlandTrample = builder
                 .comment("Trampling a farmland gives this amount of sanity")
-                .defineInRange("farmland_trample", -2.0, -100.0, 100.0);
+                .defineInRange("farmland_trample", -.2, -100.0, 100.0);
         m_pottingFlower = builder
                 .comment("Potting a flower gives this amount of sanity")
                 .defineInRange("potting_flower", 4.0, -100.0, 100.0);
@@ -367,7 +367,7 @@ public class ConfigDefault
     {
         List<String> list = new ArrayList<>();
 
-        list.add("minecraft:pufferfish;-5;0");
+        /*list.add("minecraft:pufferfish;-5;0");
         list.add("minecraft:poisonous_potato;-5;0");
         list.add("minecraft:spider_eye;-5;0");
         list.add("minecraft:rotten_flesh;-5;0");
@@ -376,7 +376,7 @@ public class ConfigDefault
         list.add("minecraft:honey_bottle;6;1");
         list.add("minecraft:golden_carrot;7;1");
         list.add("minecraft:golden_apple;8;1");
-        list.add("minecraft:enchanted_golden_apple;13;1");
+        list.add("minecraft:enchanted_golden_apple;13;1");*/
 
         return list;
     }
@@ -395,13 +395,13 @@ public class ConfigDefault
     {
         List<String> list = new ArrayList<>();
 
-        list.add("minecraft:infested_stone;-8;0;false;false");
+        /*list.add("minecraft:infested_stone;-8;0;false;false");
         list.add("minecraft:infested_cobblestone;-8;0;false;false");
         list.add("minecraft:infested_stone_bricks;-8;0;false;false");
         list.add("minecraft:infested_cracked_stone_bricks;-8;0;false;false");
         list.add("minecraft:infested_mossy_stone_bricks;-8;0;false;false");
         list.add("minecraft:infested_chiseled_stone_bricks;-8;0;false;false");
-        list.add("minecraft:infested_deepslate;-8;0;false;false");
+        list.add("minecraft:infested_deepslate;-8;0;false;false");*/
 
         return list;
     }

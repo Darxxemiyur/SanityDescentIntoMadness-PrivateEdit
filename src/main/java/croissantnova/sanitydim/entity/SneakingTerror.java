@@ -1,6 +1,10 @@
 package croissantnova.sanitydim.entity;
 
+import croissantnova.sanitydim.SanityProcessor;
+import croissantnova.sanitydim.capability.SanityProvider;
 import croissantnova.sanitydim.entity.goal.TargetInsanePlayerGoal;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -76,7 +80,7 @@ public class SneakingTerror extends InnerEntity implements IAnimatable
     public static AttributeSupplier buildAttributes()
     {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 700.0d)
+                .add(Attributes.MAX_HEALTH, 110.0d)
                 .add(Attributes.FOLLOW_RANGE, 128.0d)
                 .add(Attributes.ATTACK_DAMAGE, 16.0d)
                 .add(Attributes.MOVEMENT_SPEED, .21d)
@@ -84,4 +88,5 @@ public class SneakingTerror extends InnerEntity implements IAnimatable
                 .add(Attributes.ATTACK_KNOCKBACK, 1.0d)
                 .build();
     }
+    
 }

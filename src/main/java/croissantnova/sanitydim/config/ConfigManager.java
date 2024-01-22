@@ -6,6 +6,8 @@ import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.config.ModConfigEvent;
+
+import org.antlr.v4.parse.ANTLRParser.labeledAlt_return;
 import org.apache.commons.lang3.tuple.Pair;
 
 import javax.annotation.Nonnull;
@@ -31,8 +33,7 @@ public abstract class ConfigManager
 
     public static void init()
     {
-        configList.add(def = new ForgeConfigSpec.Builder().configure(ConfigDefault::new));
-
+        configList.add(def = (new ForgeConfigSpec.Builder()).configure(ConfigDefault::new));
         // sanity
         proxies.put("sanity.positive_multiplier", new ProxyValueEntry<>(() -> getDefault().m_posMul.get(), ConfigManager::noFinalize));
         proxies.put("sanity.negative_multiplier", new ProxyValueEntry<>(() -> getDefault().m_negMul.get(), ConfigManager::noFinalize));
