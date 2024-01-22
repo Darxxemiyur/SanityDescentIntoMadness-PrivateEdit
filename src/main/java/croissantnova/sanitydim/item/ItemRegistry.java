@@ -13,6 +13,9 @@ public class ItemRegistry
 
     public static final RegistryObject<Item> GARLAND = DEFERRED_REGISTER.register("garland", GarlandItem::new);
 
+    public static final RegistryObject<Item> OPIUM = DEFERRED_REGISTER.register("opium",
+            () -> new Item(new Item.Properties().food(ModFoods.OPIUM)));
+
     public static void register(IEventBus eventBus)
     {
         DEFERRED_REGISTER.register(eventBus);

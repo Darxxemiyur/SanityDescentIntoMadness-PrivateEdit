@@ -3,6 +3,7 @@ package croissantnova.sanitydim;
 import com.mojang.logging.LogUtils;
 import croissantnova.sanitydim.client.GuiHandler;
 import croissantnova.sanitydim.config.ConfigManager;
+import croissantnova.sanitydim.effect.EffectsRegistry;
 import croissantnova.sanitydim.entity.EntityRegistry;
 import croissantnova.sanitydim.event.EventHandler;
 import croissantnova.sanitydim.event.ModEventHandler;
@@ -36,15 +37,18 @@ public class SanityMod
         ConfigManager.register();
 
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        EntityRegistry.register(modEventBus);
+        ItemRegistry.register(modEventBus);
+        SoundRegistry.register(modEventBus);
+        EffectsRegistry.register(modEventBus);
+
         modEventBus.addListener(this::setup);
         modEventBus.addListener(this::clientSetup);
         modEventBus.addListener(ModEventHandler::addEntityAttributes);
         modEventBus.addListener(ModEventHandler::onConfigLoading);
         modEventBus.addListener(ModEventHandler::registerEntityRenderersEvent);
         MinecraftForge.EVENT_BUS.register(new EventHandler());
-        EntityRegistry.register(modEventBus);
-        ItemRegistry.register(modEventBus);
-        SoundRegistry.register(modEventBus);
     }
 
     static
